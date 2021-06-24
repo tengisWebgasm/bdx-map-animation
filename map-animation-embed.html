@@ -460,11 +460,11 @@
                             <div class="city-select-label">Data Center</div>
                             <select>
                                 <option value="">Select Data Center</option>
-                                <option value="guangzhou">Guangzhou</option>
-                                <option value="kwai-chung">Kwai Chung</option>
-                                <option value="nanjing">Nanjing</option>
-                                <option value="paya-lebar">Paya Lebar</option>
-                                <option value="wong-chuk-hang">Wong Chuk Hang</option>
+                                <option value="guangzhou">Guangzhou (CAN1)</option>
+                                <option value="kwai-chung">Kwai Chung (HKG2)</option>
+                                <option value="nanjing">Nanjing (NKG1)</option>
+                                <option value="paya-lebar">Paya Lebar (SIN1)</option>
+                                <option value="wong-chuk-hang">Wong Chuk Hang (HKG1)</option>
                             </select>
                         </div>
                         <div id="city-select-end" class="city-select" disabled>
@@ -495,7 +495,7 @@
                 </div>
                 <div id="map-side-panel-b">
                     <div id="telco-block">
-                        <div>Telco Partners</div>
+                        <div>Network Partners</div>
                         <div class="service-container">
                             <div class="service-item" telco-partner="hgc">
                                 <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4755607584a8bd68f70_image4-35.png" loading="lazy" alt="">
@@ -688,7 +688,7 @@
                                 }
                             }
                             .city-group {
-                                opacity: 0.45;
+                                opacity: 0.15;
                                 transition: opacity 200ms ease;
                                 pointer-events: none;
                             }
@@ -1673,7 +1673,7 @@
 
         </script>
         <script>
-            const alphabetArray = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+            const alphabetArray = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()".split("");
 
             async function changeText(el, newText) {
                 if (el.innerHTML === newText) return;
@@ -1819,7 +1819,7 @@
                 [...document.querySelectorAll('[dc][city]')].forEach(e => e.removeAttribute('stroke-width'));
 
                 const curLine = document.querySelector(`[dc="${selectStart.value}"][city="${destName}"]`);
-                curLine.setAttribute('stroke-width', 2);
+                curLine.setAttribute('stroke-width', 3);
 
                 const dString = curLine.getAttribute('d').replaceAll(',', ' ').replaceAll('M', '').replaceAll('C', ' ');
                 const [ px, py, qx, qy, rx, ry, sx, sy ] = dString.split(/[ ]{1,}/);
@@ -1841,8 +1841,8 @@
                 pingPanel.style.left = position.x + 'px';
                 pingPanel.style.top = position.y + 'px';
 
-                changeText(pingPanelDc, selectStart.value.replaceAll('-', ' '));
-                changeText(pingPanelCt, destName.replaceAll('-', ' ') === 'la' ? 'LA' : destName.replaceAll('-', ' '));
+                changeText(pingPanelDc, selectStart.options[selectStart.selectedIndex].label);
+                changeText(pingPanelCt, selectEnd.options[selectEnd.selectedIndex].label); 
                 changePing(document.querySelector('#map-ping-panel-ping'), `${parseInt(datacenterDetails[selectStart.value].endpoint[destName].ping)}`);
                 changePing(document.querySelector('#ping-display'), `${parseInt(datacenterDetails[selectStart.value].endpoint[destName].ping)}`);
                 pingPanel.setAttribute('active', '');
