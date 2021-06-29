@@ -1,4 +1,165 @@
 <div id="map-animation-embed">
+  <script>
+    var datacenterDetails = {
+      'guangzhou': {
+        'name': 'CAN1',
+        'endpoint': {
+          'frankurt': {
+            'ping': 162,
+          },
+          'new-york': {
+            'ping': 240,
+          },
+          'la': {
+            'ping': 164,
+          },
+          'london': {
+            'ping': 168,
+          },
+          'sydney': {
+            'ping': 123,
+          },
+          'paris': {
+            'ping': 170,
+          },
+          'tokyo': {
+            'ping': 59,
+          },
+          'chicago': {
+            'ping': 203,
+          },
+          'san-jose': {
+            'ping': 163,
+          },
+        },
+        'telco-partners': {
+          'hgc': ['aws', 'azure', 'gcp', 'alicloud'],
+          'ct': ['aws', 'azure', 'alicloud', 'ibm'],
+          'cu': ['alicloud'],
+          'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
+          'guangzhou-shunhang': [],
+          'guangzhou-anju': [],
+          'logicom-tech': [],
+          'guangzhou-yingtong': [],
+          'guangzhou-yunju': [],
+          'nova': [],
+        },
+      },
+      'kwai-chung': {
+        'name': 'HKG2',
+        'endpoint': {
+          'guangzhou': {
+            'ping': 10,
+          },
+          'nanjing': {
+            'ping': 30,
+          },
+          'paya-lebar': {
+            'ping': 34,
+          },
+          'london': {
+            'ping': 176,
+          },
+          'sydney': {
+            'ping': 116,
+          },
+        },
+        'telco-partners': {
+          'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365'],
+          'pccw': ['aws', 'azure', 'gcp', 'oracle', 'alicloud', 'ibm', 'tencent'],
+          'hkbn': [],
+          'hk-telecom': [],
+        },
+      },
+      'nanjing': {
+        'name': 'NKG1',
+        'endpoint': {
+          'frankurt': {
+            'ping': 154,
+          },
+          'new-york': {
+            'ping': 212,
+          },
+          'la': {
+            'ping': 129,
+          },
+          'london': {
+            'ping': 186,
+          },
+          'sydney': {
+            'ping': 149,
+          },
+          'paris': {
+            'ping': 167,
+          },
+          'tokyo': {
+            'ping': 39,
+          },
+          'chicago': {
+            'ping': 178,
+          },
+          'san-jose': {
+            'ping': 164,
+          },
+        },
+        'telco-partners': {
+          'cu': ['alicloud', 'ct-cloud'],
+          'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
+          'srt': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
+          'nova': ['aws', 'salesforce', 'office-365', 'alicloud', 'tencent', 'azure'],
+          'citic': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
+        },
+      },
+      'paya-lebar': {
+        'name': 'SIN1',
+        'endpoint': {
+          'guangzhou': {
+            'ping': 45,
+          },
+          'nanjing': {
+            'ping': 65,
+          },
+        },
+        'telco-partners': {
+          'singtel': ['aws', 'azure', 'gcp', 'alicloud', 'office-365', 'vmware', 'dell-emc', 'hpe', 'nutanix', 'chef'],
+          'starhub': ['aws', 'azure'],
+          'telstra': ['aws', 'azure', 'ibm', 'vmware', 'netapp'],
+          'm1': ['aws', 'nutanix'],
+          'hgc': ['aws', 'azure', 'office-365'],
+          'sp-telecom': ['aws', 'azure', 'gcp', 'alicloud'],
+          'at&t': ['aws', 'azure', 'gcp', 'oracle', 'ibm', 'salesforce', 'dell-emc'],
+          'superloop': [],
+          'cogent': [],
+          'netlink-trust': [],
+          'viewquest': [],
+        },
+      },
+      'wong-chuk-hang': {
+        'name': 'HKG1',
+        'endpoint': {
+          'guangzhou': {
+            'ping': 10,
+          },
+          'nanjing': {
+            'ping': 30,
+          },
+          'paya-lebar': {
+            'ping': 34,
+          },
+          'london': {
+            'ping': 176,
+          },
+          'sydney': {
+            'ping': 116,
+          },
+        },
+        'telco-partners': {
+          'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365'],
+          'hk-telecom': [],
+        },
+      },
+    };
+  </script>
   <style>
     #map-animation-embed * {
       box-sizing: border-box;
@@ -1530,169 +1691,7 @@
     </div>
   </div>
   <script>
-    var datacenterDetails = {
-      'guangzhou': {
-        'name': 'CAN1',
-        'endpoint': {
-          'frankurt': {
-            'ping': 162,
-          },
-          'new-york': {
-            'ping': 240,
-          },
-          'la': {
-            'ping': 164,
-          },
-          'london': {
-            'ping': 168,
-          },
-          'sydney': {
-            'ping': 123,
-          },
-          'paris': {
-            'ping': 170,
-          },
-          'tokyo': {
-            'ping': 59,
-          },
-          'chicago': {
-            'ping': 203,
-          },
-          'san-jose': {
-            'ping': 163,
-          },
-        },
-        'telco-partners': {
-          'hgc': ['aws', 'azure', 'gcp', 'alicloud'],
-          'ct': ['aws', 'azure', 'alicloud', 'ibm'],
-          'cu': ['alicloud'],
-          'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
-          'guangzhou-shunhang': [],
-          'guangzhou-anju': [],
-          'logicom-tech': [],
-          'guangzhou-yingtong': [],
-          'guangzhou-yunju': [],
-          'nova': [],
-        },
-      },
-      'kwai-chung': {
-        'name': 'HKG2',
-        'endpoint': {
-          'guangzhou': {
-            'ping': 10,
-          },
-          'nanjing': {
-            'ping': 30,
-          },
-          'paya-lebar': {
-            'ping': 34,
-          },
-          'london': {
-            'ping': 176,
-          },
-          'sydney': {
-            'ping': 116,
-          },
-        },
-        'telco-partners': {
-          'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365'],
-          'pccw': ['aws', 'azure', 'gcp', 'oracle', 'alicloud', 'ibm', 'tencent'],
-          'hkbn': [],
-          'hk-telecom': [],
-        },
-      },
-      'nanjing': {
-        'name': 'NKG1',
-        'endpoint': {
-          'frankurt': {
-            'ping': 154,
-          },
-          'new-york': {
-            'ping': 212,
-          },
-          'la': {
-            'ping': 129,
-          },
-          'london': {
-            'ping': 186,
-          },
-          'sydney': {
-            'ping': 149,
-          },
-          'paris': {
-            'ping': 167,
-          },
-          'tokyo': {
-            'ping': 39,
-          },
-          'chicago': {
-            'ping': 178,
-          },
-          'san-jose': {
-            'ping': 164,
-          },
-        },
-        'telco-partners': {
-          'cu': ['alicloud', 'ct-cloud'],
-          'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
-          'srt': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
-          'nova': ['aws', 'salesforce', 'office-365', 'alicloud', 'tencent', 'azure'],
-          'citic': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
-        },
-      },
-      'paya-lebar': {
-        'name': 'SIN1',
-        'endpoint': {
-          'guangzhou': {
-            'ping': 45,
-          },
-          'nanjing': {
-            'ping': 65,
-          },
-        },
-        'telco-partners': {
-          'singtel': ['aws', 'azure', 'gcp', 'alicloud', 'office-365', 'vmware', 'dell-emc', 'hpe', 'nutanix', 'chef'],
-          'starhub': ['aws', 'azure'],
-          'telstra': ['aws', 'azure', 'ibm', 'vmware', 'netapp'],
-          'm1': ['aws', 'nutanix'],
-          'hgc': ['aws', 'azure', 'office-365'],
-          'sp-telecom': ['aws', 'azure', 'gcp', 'alicloud'],
-          'at&t': ['aws', 'azure', 'gcp', 'oracle', 'ibm', 'salesforce', 'dell-emc'],
-          'superloop': [],
-          'cogent': [],
-          'netlink-trust': [],
-          'viewquest': [],
-        },
-      },
-      'wong-chuk-hang': {
-        'name': 'HKG1',
-        'endpoint': {
-          'guangzhou': {
-            'ping': 10,
-          },
-          'nanjing': {
-            'ping': 30,
-          },
-          'paya-lebar': {
-            'ping': 34,
-          },
-          'london': {
-            'ping': 176,
-          },
-          'sydney': {
-            'ping': 116,
-          },
-        },
-        'telco-partners': {
-          'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365'],
-          'hk-telecom': [],
-        },
-      },
-    };
-
-  </script>
-  <script>
-    const alphabetArray = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ|()".split("");
+    var alphabetArray = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ|()".split("");
 
     async function changeText(el, newText) {
       if (el.innerHTML === newText) return;
