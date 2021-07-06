@@ -1855,6 +1855,7 @@
     }
   </script>
   <script>
+    var mapElement = document.querySelector('#map-element');
     var selectStartCont = document.querySelector("#city-select-start");
     var selectEndCont = document.querySelector("#city-select-end");
     var selectStart = selectStartCont.querySelector('select');
@@ -2051,8 +2052,9 @@
       if (parseInt(pingPanelContent.getBoundingClientRect().right) != prvRight) {
         prvRight = parseInt(pingPanelContent.getBoundingClientRect().right) || 0;
         marginLeft = parseInt(pingPanelContent.style.marginLeft) || 0;
-        if (prvRight - marginLeft > window.innerWidth) {
-          pingPanelContent.style.marginLeft = window.innerWidth - prvRight + marginLeft + 'px';
+        mapBounds = parseInt(mapElement.getBoundingClientRect().right);
+        if (prvRight - marginLeft > mapBounds) {
+          pingPanelContent.style.marginLeft = mapBounds - prvRight + marginLeft + 'px';
         } else {
           pingPanelContent.style.marginLeft = '';
         }
