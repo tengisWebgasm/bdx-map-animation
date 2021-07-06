@@ -31,6 +31,18 @@
           'san-jose': {
             'ping': 163,
           },
+          'wong-chuk-hang': {
+            'ping': 11,
+          },
+          'kwai-chung': {
+            'ping': 11,
+          },
+          'paya-lebar': {
+            'ping': 72,
+          },
+          'nanjing': {
+            'ping': 44,
+          },
         },
         'telco-partners': {
           'hgc': ['aws', 'azure', 'gcp', 'alicloud'],
@@ -62,6 +74,30 @@
           },
           'sydney': {
             'ping': 116,
+          },
+          'wong-chuk-hang': {
+            'ping': 1,
+          },
+          'tokyo': {
+            'ping': 61,
+          },
+          'frankurt': {
+            'ping': 290,
+          },
+          'paris': {
+            'ping': 280,
+          },
+          'new-york': {
+            'ping': 230,
+          },
+          'chicago': {
+            'ping': 210,
+          },
+          'la': {
+            'ping': 170,
+          },
+          'san-jose': {
+            'ping': 160,
           },
         },
         'telco-partners': {
@@ -119,6 +155,33 @@
           'nanjing': {
             'ping': 65,
           },
+          'wong-chuk-hang': {
+            'ping': 38,
+          },
+          'kwai-chung': {
+            'ping': 38,
+          },
+          'tokyo': {
+            'ping': 58,
+          },
+          'frankurt': {
+            'ping': 230,
+          },
+          'paris': {
+            'ping': 300,
+          },
+          'new-york': {
+            'ping': 240,
+          },
+          'chicago': {
+            'ping': 242,
+          },
+          'la': {
+            'ping': 164,
+          },
+          'san-jose': {
+            'ping': 178,
+          },
         },
         'telco-partners': {
           'singtel': ['aws', 'azure', 'gcp', 'alicloud', 'office-365', 'vmware', 'dell-emc', 'hpe', 'nutanix', 'chef'],
@@ -151,6 +214,27 @@
           },
           'sydney': {
             'ping': 116,
+          },
+          'tokyo': {
+            'ping': 61,
+          },
+          'frankurt': {
+            'ping': 315,
+          },
+          'paris': {
+            'ping': 300,
+          },
+          'new-york': {
+            'ping': 250,
+          },
+          'chicago': {
+            'ping': 230,
+          },
+          'la': {
+            'ping': 170,
+          },
+          'san-jose': {
+            'ping': 160,
           },
         },
         'telco-partners': {
@@ -349,6 +433,7 @@
       filter: drop-shadow(20px 20px 60px rgba(7, 21, 58, 0.09));
       padding: 16px 22px;
       border-radius: 12px;
+      opacity: 0.85;
 
       font-family: Metropolis, sans-serif;
       font-style: normal;
@@ -1353,23 +1438,51 @@
           </g>
 
           <g city-lines>
+            <!-- New Line Helper
+            <circle left-node cx="0" cy="0" r="2" fill="green"/>
+            <circle right-node cx="0" cy="0" r="2" fill="green"/>
+            -->
+
             <path dc="paya-lebar" city="guangzhou" d="M911.946 368.506C898.783 346.148 885.129 280.79 928.135 225.676" stroke="#05A8D0"/>
             <path dc="paya-lebar" city="nanjing" d="M910.93,369.415 C862.093,305.038 901.664,223.869 930.288,204.033" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="wong-chuk-hang" d="M910.93,369.415 C925.493,344.588 938.314,285.469 935.102,253.222" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="kwai-chung" d="M910.93,369.415 C932.193,353.388 957.114,294.069 947.004,240.106" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="tokyo" d="M910.93,369.415 C982.793,335.038 1022.914,233.869 1003.87,180.756" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="frankurt" d="M910.93,369.415 C840.693,357.288 687.914,318.119 547.423,159.08" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="paris" d="M910.93,369.415 C781.493,368.938 583.364,265.569 517.455,161.855" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="new-york" d="M910.93,369.415 C687.793,399.088 409.364,343.419 272.712,184.054" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="chicago" d="M910.93,369.415 C777.843,396.288 362.014,386.719 240.523,165.74" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="la" d="M910.93,369.415 C702.243,442.738 222.664,333.619 120.094,179.059" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="san-jose" d="M910.93,369.415 C685.793,423.838 269.764,349.669 131.193,160.745" stroke="#05A8D0"/>
             
             <path dc="kwai-chung" city="nanjing" d="M947.004 240.106C949.921 232.755 950.649 214.994 935.349 202.922" stroke="#05A8D0"/>
-            <path dc="kwai-chung" city="paya-lebar" d="M945.339 241.771C912.596 252.87 888.773 304.048 910.425 367.373" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="paya-lebar" d="M945.339,241.771 C955.996,279.02 937.073,345.448 910.425,367.373" stroke="#05A8D0"/>
             <path dc="kwai-chung" city="guangzhou" d="M944.229,241.771 C936.676,239.973 929.118,230.211 929.245,226.787" stroke="#05A8D0"/>
-            <path dc="kwai-chung" city="sydney" d="M945.339 241.216C899.165 251.206 867.243 329.808 899.165 391.165C931.088 452.522 1005.18 485.846 1038.24 494.838" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="sydney" d="M945.339,241.216 C1031.265,287.456 1058.343,442.708 1041.24,494.838" stroke="#05A8D0"/>
             <g filter="url(#filter1_d)">
               <path dc="kwai-chung" city="london" d="M944.19,239.051 C918.529,165.346 797.812,42.2355 524.669,131.331" stroke="#05A8D0"/>
             </g>
+            <path dc="kwai-chung" city="wong-chuk-hang" d="M945.339,241.216 C944.565,247.956 940.193,253.658 935.102,253.222" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="tokyo" d="M945.339,241.216 C974.393,236.888 999.314,207.719 1003.87,180.756" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="frankurt" d="M945.339,241.216 C805.593,266.138 641.964,236.819 547.423,159.08" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="paris" d="M945.339,241.216 C792.443,283.338 567.464,212.319 517.455,161.855" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="new-york" d="M945.339,241.216 C686.293,328.188 369.964,294.519 272.712,184.054" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="chicago" d="M945.339,241.216 C711.193,332.088 344.114,308.569 240.523,165.74" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="la" d="M945.339,241.216 C705.693,368.438 298.364,312.819 120.094,179.059" stroke="#05A8D0"/>
+            <path dc="kwai-chung" city="san-jose" d="M945.339,241.216 C747.043,335.988 338.314,318.319 131.193,160.745" stroke="#05A8D0"/>
 
             <path dc="wong-chuk-hang" city="paya-lebar" d="M935.102,253.222 C901.295,293.324 905.354,348.999 911.609,371.824" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="guangzhou" d="M934.239,252.871 C934.794,244.546 932.574,229.007 929.245,225.677" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="sydney" d="M933.13 254.535C889.287 292.274 843.74 456.589 1040.79 496.504" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="nanjing" d="M935.904,254.536 C943.119,245.656 939.234,210.138 934.795,202.923" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="london" d="M933.129 253.426C734.299 23.7531 579.125 75.9762 523.602 131.82" stroke="#05A8D0"/>
-          
+            <path dc="wong-chuk-hang" city="tokyo" d="M933.129,255.426 C989.493,241.988 995.664,212.269 1003.87,180.756" stroke="#05A8D0"/>
+            <path dc="wong-chuk-hang" city="frankurt" d="M933.129,255.426 C825.093,171.638 666.964,94.669 547.423,159.08" stroke="#05A8D0"/>
+            <path dc="wong-chuk-hang" city="paris" d="M933.129,255.426 C781.793,288.388 599.414,243.919 517.455,161.855" stroke="#05A8D0"/>
+            <path dc="wong-chuk-hang" city="new-york" d="M933.129,255.426 C684.643,348.138 392.514,327.169 272.712,184.054" stroke="#05A8D0"/>
+            <path dc="wong-chuk-hang" city="chicago" d="M933.129,255.426 C721.393,348.938 361.314,344.269 240.523,165.74" stroke="#05A8D0"/>
+            <path dc="wong-chuk-hang" city="la" d="M933.129,255.426 C703.993,393.538 292.114,319.769 120.094,179.059" stroke="#05A8D0"/>
+            <path dc="wong-chuk-hang" city="san-jose" d="M933.129,255.426 C752.493,344.238 445.464,377.919 131.193,160.745" stroke="#05A8D0"/>
 
             <g filter="url(#filter2_d)">
               <path dc="guangzhou" city="london" d="M929.8 225.122C754.428 19.7816 579.256 80.4969 523.559 131.887" stroke="#05A8D0"/>
@@ -1391,8 +1504,12 @@
             <g filter="url(#filter7_d)">
               <path dc="guangzhou" city="chicago" d="M928.624 227.201C627.876 279.542 455.68 267.967 240.523 165.74" stroke="#05A8D0"/>
             </g>
-            <path dc="guangzhou" city="sydney" d="M928.702 227.86C889.409 301.678 853.189 458.409 1038.66 494.79" stroke="#05A8D0"/>
-          
+            <path dc="guangzhou" city="sydney" d="M929.8 224.567 C889.409 301.678 853.189 458.409 1038.66 494.79" stroke="#05A8D0"/>
+            <path dc="guangzhou" city="wong-chuk-hang" d="M929.8,224.567 C943.793,247.688 928.214,253.319 935.102,253.222" stroke="#05A8D0"/>
+            <path dc="guangzhou" city="kwai-chung" d="M929.8,224.567 C932.443,223.638 945.014,222.419 947.004,240.106" stroke="#05A8D0"/>
+            <path dc="guangzhou" city="paya-lebar" d="M929.8,224.567 C924.633,229.648 868.179,293.99 911.946,368.506" stroke="#05A8D0"/>
+            <path dc="guangzhou" city="nanjing" d="M929.8,224.567 C923.4500000000028,216.76700000000054 930.7000000000016,202.16699999999886 930.288,204.033" stroke="#05A8D0"/>
+            
             <g filter="url(#filter8_d)">
               <path dc="nanjing" city="london" d="M932.56 202.044C762.006 97.666 588.031 112.164 523.559 131.887" stroke="#05A8D0"/>
             </g>
@@ -1751,6 +1868,8 @@
     var separatorBlock = document.querySelector('#telco-separator')
     var providersBlock = document.querySelector('#providers-block');
     var providerCloudContent = document.querySelector('#providers-block-content');
+    var pingPanelContent = pingPanel.querySelector('#map-ping-content');
+    var pingPanelButton = pingPanel.querySelector('#map-ping-button');
 
     var showSelection = (cityName) => {
       selectStartCont.setAttribute('active', '');
@@ -1925,5 +2044,102 @@
         separatorBlock.setAttribute('active', '');
       });
     });
+
+    // listen for pingpanel going off the page
+    let prvRight = parseInt(pingPanelContent.getBoundingClientRect().right);
+    setInterval(() => {
+      if (parseInt(pingPanelContent.getBoundingClientRect().right) != prvRight) {
+        prvRight = parseInt(pingPanelContent.getBoundingClientRect().right) || 0;
+        marginLeft = parseInt(pingPanelContent.style.marginLeft) || 0;
+        if (prvRight - marginLeft > window.innerWidth) {
+          pingPanelContent.style.marginLeft = window.innerWidth - prvRight + marginLeft + 'px';
+        } else {
+          pingPanelContent.style.marginLeft = '';
+        }
+        pingPanelButton.style.marginRight = pingPanelContent.style.marginLeft;
+      }
+    }, 20);
+
   </script>
+  <!-- New Line Helper
+  <div style="
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    position: relative;
+    top: -100px;
+  ">
+    <div style="
+      width: 40px;
+      height: 40px;
+      background-color: aqua;
+    " toggle-left></div>
+    <div style="
+      width: 40px;
+      height: 40px;
+      background-color: blueviolet;
+    " toggle-right></div>
+  </div>
+  <script>
+    let left = true;
+    let pos1, pos2, pos3, pos4 = 0;
+
+    const dc = 'paya-lebar';
+    const city = 'san-jose';
+    const line = document.querySelector(`path[dc="${dc}"][city="${city}"]`);
+    [...document.querySelectorAll(`path[dc="${dc}"]`)].forEach(line => {
+      line.style.opacity = '0.3';
+    })
+    line.style.opacity = '1';
+
+    const toggleLeft = document.querySelector('[toggle-left]');
+    const toggleRight = document.querySelector('[toggle-right]');
+    const nodeLeft = document.querySelector('[left-node]');
+    const nodeRight = document.querySelector('[right-node]');
+
+    toggleLeft.addEventListener('mousedown', e => {
+      left = true;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.addEventListener('mouseup', closeDragElement);
+      document.addEventListener('mousemove', elementDrag);
+    });
+    toggleRight.addEventListener('mousedown', e => {
+      left = false;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.addEventListener('mouseup', closeDragElement);
+      document.addEventListener('mousemove', elementDrag);
+    });
+
+    function elementDrag(e) {
+      e.preventDefault();
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      
+      const dString = line.getAttribute('d').replaceAll(',', ' ').replaceAll('M', '').replaceAll('C', ' ');
+      let [ px, py, qx, qy, rx, ry, sx, sy ] = dString.split(/[ ]{1,}/);
+
+      if (left) {
+        qx = Math.round((qx - pos1 / 20) * 1000) / 1000;
+        qy = Math.round((qy - pos2 / 20) * 1000) / 1000;
+      } else {
+        rx = Math.round((rx - pos1 / 20) * 1000) / 1000;
+        ry = Math.round((ry - pos2 / 20) * 1000) / 1000;
+      }
+      line.setAttribute('d', `M${px},${py} C${qx},${qy} ${rx},${ry} ${sx},${sy}`);
+      nodeLeft.setAttribute('cx', qx);
+      nodeLeft.setAttribute('cy', qy);
+      nodeRight.setAttribute('cx', rx);
+      nodeRight.setAttribute('cy', ry);
+    }
+
+    function closeDragElement() {
+      document.removeEventListener('mouseup', closeDragElement);
+      document.removeEventListener('mousemove', elementDrag);
+      console.log(line);
+      console.log(line.getAttribute('d'));
+    }
+  </script>
+  -->
 </div>
