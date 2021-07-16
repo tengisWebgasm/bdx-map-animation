@@ -110,6 +110,18 @@
       'nanjing': {
         // NKG1
         'endpoint': {
+          'guangzhou': {
+            'ping': 0,
+          },
+          'wong-chuk-hang': {
+            'ping': 0,
+          },
+          'paya-lebar': {
+            'ping': 0,
+          },
+          'kwai-chung': {
+            'ping': 0,
+          },
           'frankurt': {
             'ping': 154,
           },
@@ -182,6 +194,12 @@
           'san-jose': {
             'ping': 178,
           },
+          'london': {
+            'ping': 0,
+          },
+          'sydney': {
+            'ping': 0,
+          },
         },
         'telco-partners': {
           'singtel': ['aws', 'azure', 'gcp', 'alicloud', 'office-365', 'vmware', 'dell-emc', 'hpe', 'nutanix', 'chef'],
@@ -200,6 +218,9 @@
       'wong-chuk-hang': {
         // HKG1
         'endpoint': {
+          'kwai-chung': {
+            'ping': 0,
+          },
           'guangzhou': {
             'ping': 10,
           },
@@ -1438,10 +1459,9 @@
           </g>
 
           <g city-lines>
-            <!-- New Line Helper
-            <circle left-node cx="0" cy="0" r="2" fill="green"/>
-            <circle right-node cx="0" cy="0" r="2" fill="green"/>
-            -->
+            <!-- NEW LINE HELPER -->
+            <!-- <circle left-node cx="0" cy="0" r="2" fill="green"/>
+            <circle right-node cx="0" cy="0" r="2" fill="green"/> -->
 
             <path dc="paya-lebar" city="guangzhou" d="M911.946 368.506C898.783 346.148 885.129 280.79 928.135 225.676" stroke="#05A8D0"/>
             <path dc="paya-lebar" city="nanjing" d="M910.93,369.415 C862.093,305.038 901.664,223.869 930.288,204.033" stroke="#05A8D0"/>
@@ -1454,6 +1474,8 @@
             <path dc="paya-lebar" city="chicago" d="M910.93,369.415 C777.843,396.288 362.014,386.719 240.523,165.74" stroke="#05A8D0"/>
             <path dc="paya-lebar" city="la" d="M910.93,369.415 C702.243,442.738 222.664,333.619 120.094,179.059" stroke="#05A8D0"/>
             <path dc="paya-lebar" city="san-jose" d="M910.93,369.415 C685.793,423.838 269.764,349.669 131.193,160.745" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="london" d="M910.93,369.415 C822.199,262.053 702.025,150.776 523.602,131.82" stroke="#05A8D0"/>
+            <path dc="paya-lebar" city="sydney" d="M910.93,369.415 C989.665,376.356 1043.293,457.008 1041.24,494.838" stroke="#05A8D0"/>
             
             <path dc="kwai-chung" city="nanjing" d="M947.004 240.106C949.921 232.755 950.649 214.994 935.349 202.922" stroke="#05A8D0"/>
             <path dc="kwai-chung" city="paya-lebar" d="M945.339,241.771 C955.996,279.02 937.073,345.448 910.425,367.373" stroke="#05A8D0"/>
@@ -1471,6 +1493,7 @@
             <path dc="kwai-chung" city="la" d="M945.339,241.216 C705.693,368.438 298.364,312.819 120.094,179.059" stroke="#05A8D0"/>
             <path dc="kwai-chung" city="san-jose" d="M945.339,241.216 C747.043,335.988 338.314,318.319 131.193,160.745" stroke="#05A8D0"/>
 
+            <path dc="wong-chuk-hang" city="kwai-chung" d="M935.102,253.222 C941.395,254.274 945.204,249.499 945.339,241.216" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="paya-lebar" d="M935.102,253.222 C901.295,293.324 905.354,348.999 911.609,371.824" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="guangzhou" d="M934.239,252.871 C934.794,244.546 932.574,229.007 929.245,225.677" stroke="#05A8D0"/>
             <path dc="wong-chuk-hang" city="sydney" d="M933.13 254.535C889.287 292.274 843.74 456.589 1040.79 496.504" stroke="#05A8D0"/>
@@ -1510,6 +1533,10 @@
             <path dc="guangzhou" city="paya-lebar" d="M929.8,224.567 C924.633,229.648 868.179,293.99 911.946,368.506" stroke="#05A8D0"/>
             <path dc="guangzhou" city="nanjing" d="M929.8,224.567 C923.4500000000028,216.76700000000054 930.7000000000016,202.16699999999886 930.288,204.033" stroke="#05A8D0"/>
             
+            <path dc="nanjing" city="guangzhou" d="M932.56,202.044 C936.856,211.766 934.681,218.564 929.8,224.567" stroke="#05A8D0"/>
+            <path dc="nanjing" city="wong-chuk-hang" d="M932.56,202.044 C944.406,217.116 939.231,241.664 935.102,253.222" stroke="#05A8D0"/>
+            <path dc="nanjing" city="paya-lebar" d="M932.56,202.044 C994.756,244.366 974.881,340.314 911.946,368.506" stroke="#05A8D0"/>
+            <path dc="nanjing" city="kwai-chung" d="M932.56,202.044 C949.106,214.766 949.181,232.814 947.004,240.106" stroke="#05A8D0"/>
             <g filter="url(#filter8_d)">
               <path dc="nanjing" city="london" d="M932.56 202.044C762.006 97.666 588.031 112.164 523.559 131.887" stroke="#05A8D0"/>
             </g>
@@ -1531,7 +1558,7 @@
             <g filter="url(#filter14_d)">
               <path dc="nanjing" city="paris" d="M932.559 202.044C775.025 116.806 698.708 120.973 518.01 162.41" stroke="#05A8D0"/>
             </g>
-            <path dc="nanjing" city="sydney" d="M931.816 203.258C890.755 284.503 855.065 457.005 1040.79 497.059" stroke="#05A8D0"/>
+            <path dc="nanjing" city="sydney" d="M931.816,203.258 C1085.405,242.753 1106.465,444.555 1040.79,497.059" stroke="#05A8D0"/>
             <path dc="nanjing" city="tokyo" d="M935.172 201.183C942.941 189.827 967.173 169.421 1001.95 178.644" stroke="#05A8D0"/>
 
           </g>
@@ -2063,8 +2090,8 @@
     }, 20);
 
   </script>
-  <!-- New Line Helper
-  <div style="
+  <!-- NEW LINE HELPER -->
+  <!-- <div style="
     display: flex;
     width: 100vw;
     justify-content: center;
@@ -2086,8 +2113,8 @@
     let left = true;
     let pos1, pos2, pos3, pos4 = 0;
 
-    const dc = 'paya-lebar';
-    const city = 'san-jose';
+    const dc = 'nanjing';
+    const city = 'sydney';
     const line = document.querySelector(`path[dc="${dc}"][city="${city}"]`);
     [...document.querySelectorAll(`path[dc="${dc}"]`)].forEach(line => {
       line.style.opacity = '0.3';
@@ -2142,6 +2169,5 @@
       console.log(line);
       console.log(line.getAttribute('d'));
     }
-  </script>
-  -->
+  </script> -->
 </div>
