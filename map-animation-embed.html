@@ -518,11 +518,35 @@
 
     .service-container {
       display: grid;
-      margin: 16px 0px;
+      margin: 16px 0px 8px;
       grid-template-columns: 1fr 1fr 1fr;
       grid-auto-rows: 46px;
       column-gap: 6px;
       row-gap: 8px;
+    }
+    .service-container[collapsed] {
+      height: 100px;
+      overflow: hidden;
+    }
+    .service-container-collapse {
+      font-size: 12px;
+      line-height: 12px;
+      text-align: center;
+      color: #05A8D0;
+      transition: opacity ease 200ms;
+      opacity: 0;
+      pointer-events: none;
+      margin-top: 2px;
+      margin-bottom: 0px;
+    }
+    .service-container-collapse:hover {
+      text-decoration: underline;
+    }
+    .service-container-collapse[numCollapsing] {
+      opacity: 1;
+      pointer-events: all;
+      margin-bottom: 10px;
+      cursor: pointer;
     }
 
     .service-item {
@@ -537,12 +561,24 @@
       text-align: center;
       font-size: 14px;
       color: rgba(0, 0, 0, 0.8);
+      position: relative;
+      top: 0;
+      left: 0;
     }
     .service-item[telco-partner] {
       cursor: pointer;
     }
     .service-item[show] {
       display: flex;
+      animation: fadein 400ms;
+    }
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
     .service-item[active] {
       border: 1px solid #05A8D0;
@@ -567,26 +603,17 @@
       background-color: white;
       width: 100%;
       z-index: 2;
-      top: -50px;
-      transition: top 300ms ease 260ms;
-    }
-    #telco-separator[active] {
-      top: 0px;
-      transition: top 300ms ease;
     }
     
     #providers-block {
       position: relative;
       background-color: white;
       z-index: 1;
-      top: -500px;
       min-height: 200px;
-      padding-bottom: 20px;
-      transition: top 300ms ease;
+      padding-bottom: 8px;
     }
-    #providers-block[active] {
-      top: 0px;
-      transition: top 300ms ease 260ms;
+    #providers-block[placeholder="on"] #providers-block-content {
+      opacity: 0;
     }
 
     #providers-block-content {
@@ -594,6 +621,7 @@
       position: relative;
       z-index: 2;
       min-height: 200px;
+      transition: opacity ease 200ms;
     }
 
     #providers-block-placeholder {
@@ -780,20 +808,36 @@
             <div class="service-item" telco-partner="cm">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf476baeefb00a8aebf8c_image13-47.png" loading="lazy" alt="">
             </div>
-            <div class="service-item" telco-partner="guangzhou-shunhang">Shunhang Coms.</div>
-            <div class="service-item" telco-partner="guangzhou-anju">Anju Coms.</div>
-            <div class="service-item" telco-partner="logicom-tech">Logicom Tech</div>
-            <div class="service-item" telco-partner="guangzhou-yingtong">YingTong Coms.</div>
-            <div class="service-item" telco-partner="guangzhou-yunju">YunJu Coms.</div>
+            <div class="service-item" telco-partner="guangzhou-shunhang">
+              Shunhang Coms.
+            </div>
+            <div class="service-item" telco-partner="guangzhou-anju">
+              Anju Coms.
+            </div>
+            <div class="service-item" telco-partner="logicom-tech">
+              Logicom Tech
+            </div>
+            <div class="service-item" telco-partner="guangzhou-yingtong">
+              YingTong Coms.
+            </div>
+            <div class="service-item" telco-partner="guangzhou-yunju">
+              YunJu Coms.
+            </div>
             <div class="service-item" telco-partner="nova">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4769329d90332c90e87_image14-49.png" loading="lazy" alt="">
             </div>
             <div class="service-item" telco-partner="pccw">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf476a1155a9120769798_image16-52.png" loading="lazy" alt="">
             </div>
-            <div class="service-item" telco-partner="hkbn">HKBN</div>
-            <div class="service-item" telco-partner="hk-telecom">HK Telecom</div>
-            <div class="service-item" telco-partner="srt">SRIT</div>
+            <div class="service-item" telco-partner="hkbn">
+              HKBN
+            </div>
+            <div class="service-item" telco-partner="hk-telecom">
+              HK Telecom
+            </div>
+            <div class="service-item" telco-partner="srt">
+              SRIT
+            </div>
             <div class="service-item" telco-partner="citic">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf47646fc80772e8912b2_image15-51.png" loading="lazy" alt="">
             </div>
@@ -818,13 +862,18 @@
             <div class="service-item" telco-partner="superloop">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4752a3de511f0e15642_image9-40.png" loading="lazy" alt="">
             </div>
-            <div class="service-item" telco-partner="cogent">Cogent</div>
+            <div class="service-item" telco-partner="cogent">
+              Cogent
+            </div>
             <div class="service-item" telco-partner="netlink-trust">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf47548bbf7575c6b70cc_image8-39.jpeg" loading="lazy" alt="">
             </div>
             <div class="service-item" telco-partner="viewquest">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4750182f83e63182ab2_image10-42.jpeg" loading="lazy" alt="">
             </div>
+          </div>
+          <div class="service-container-collapse">
+            Show more (0)
           </div>
         </div>
         <div id="telco-separator">
@@ -893,8 +942,9 @@
               <div class="service-item" cloud-provider="netapp">
                 <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52.png" loading="lazy" sizes="(max-width: 1200px) 100vw, 1200px" srcset="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52-p-500.png 500w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52-p-800.png 800w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52-p-1080.png 1080w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52.png 1200w" alt="">
               </div>
-            
-            
+            </div>
+            <div class="service-container-collapse">
+              Show more (0)
             </div>
           </div>
           <div id="providers-block-placeholder">Network Provider</div>
@@ -1899,14 +1949,21 @@
     var pingPanelContent = pingPanel.querySelector('#map-ping-content');
     var pingPanelButton = pingPanel.querySelector('#map-ping-button');
 
+    // function called when some starting point (data center) is selected
     var showSelection = (cityName) => {
+      // adjust display of dropdowns
       selectStartCont.setAttribute('active', '');
       selectEnd.removeAttribute('disabled');
       selectEndCont.removeAttribute('disabled');
 
-      const curEndpoints = Object.keys(datacenterDetails[cityName].endpoint);
-      const datacentres = Object.keys(datacenterDetails);
-      const curPartners = Object.keys(datacenterDetails[cityName]['telco-partners']);
+      // get data about starting point from json
+      const curEndpoints = Object.keys(datacenterDetails[cityName].endpoint); // valid city endpoints of the data center
+      const datacentres = Object.keys(datacenterDetails); // all datacentres
+      const curPartners = Object.keys(datacenterDetails[cityName]['telco-partners']); // telco partners of the data center
+      const curProvidersSet = new Set(Object.values(datacenterDetails[cityName]['telco-partners']).reduce((acc, cur) => [...acc, ...cur], [])); // cloud providers of the data center
+      const curProviders = [...curProvidersSet];
+
+      // display the lines and city
       [...document.querySelectorAll(`.city-group`)].forEach(group => {
         if (group.id === cityName) group.setAttribute('dc', '');
         else group.removeAttribute('dc');
@@ -1914,7 +1971,6 @@
         if (group.id === cityName || curEndpoints.includes(group.id)) group.setAttribute('on', '');
         else group.removeAttribute('on');
       });
-
       try {
         [...document.querySelector('[city-lines]').querySelectorAll('path')].forEach(e => e.removeAttribute('on'));
         [...document.querySelectorAll(`[dc="${cityName}"]`)].forEach(e => {
@@ -1923,11 +1979,13 @@
       } catch {
       }
 
+      // adjust display of destination dropdown to highlight available cities 
       [...selectEnd.querySelectorAll('option')].forEach(opt => {
         if (curEndpoints.includes(opt.value) || !opt.value) opt.removeAttribute('disabled');
         else opt.setAttribute('disabled', '');
       })
 
+      // adjust ping display for the datacenter to (selected?) global city
       if (curEndpoints.includes(selectEnd.value)) selectDestination(selectEnd.value);
       else {
         selectEnd.value = '';
@@ -1937,32 +1995,33 @@
         pingPanel.removeAttribute('active');
       }
 
-      [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
-        curPartners.includes(partner.getAttribute('telco-partner')) ? partner.setAttribute('show', '') : partner.removeAttribute('show');
-      });
+      // show the data center telco partners
+      adjustTelcoPartnerDisplay(curPartners);
 
+      // account for previously selected telco partner
       if (curPartners.includes(telcoBlock.getAttribute('active-partner'))) {
-        const curProviders = datacenterDetails[cityName]['telco-partners'][telcoBlock.getAttribute('active-partner')];
-        [...providersBlock.querySelectorAll('[cloud-provider]')].forEach(provider => {
-          if (curProviders.includes(provider.getAttribute('cloud-provider'))) {
-            provider.setAttribute('show', '');
-          } else {
-            provider.removeAttribute('show');
-          }
-        });
+        const prvProviders = datacenterDetails[cityName]['telco-partners'][telcoBlock.getAttribute('active-partner')];
+        adjustCloudProviderDisplay(prvProviders);
       } else {
-        [...providersBlock.querySelectorAll('[cloud-provider]')].forEach(provider => {
-          provider.removeAttribute('show');
+        // turn off any active selections on telco partner button
+        [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
+          partner.removeAttribute('active');
         });
+
+        // remove the active attribute
+        telcoBlock.removeAttribute('active-partner');
+
+        // show the data center's relevant cloud provideers
+        adjustCloudProviderDisplay(curProviders);
       }
+
+      // display the panel
       telcoContainer.setAttribute('on', '');
     }
 
     var closeSelection = () => {
       telcoContainer.removeAttribute('on');
       selectStartCont.removeAttribute('active');
-      providersBlock.removeAttribute('active');
-      separatorBlock.removeAttribute('active');
       selectEnd.value = '';
       selectEnd.setAttribute('disabled', '');
       selectEndCont.setAttribute('disabled', '');
@@ -2036,41 +2095,163 @@
       }
     });
 
+    // click on telco block container to remove all choices
     telcoBlock.addEventListener('click', e => {
       if (e.currentTarget === telcoBlock) {
-        providersBlock.removeAttribute('active');
-        separatorBlock.removeAttribute('active');
+        // turn off active selection on telco partner button
         [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
           partner.removeAttribute('active');
         });
+        // show all current providers
+        const curProvidersSet = new Set(Object.values(datacenterDetails[selectStart.value]['telco-partners']).reduce((acc, cur) => [...acc, ...cur], [])); // cloud providers of the data center
+        const curProviders = [...curProvidersSet];
+        adjustCloudProviderDisplay(curProviders);
       }
     });
 
+    // add click event listneners for each telco partner block
     [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(block => {
       block.addEventListener('click', (e) => {
         e.stopPropagation();
+
         telcoBlock.setAttribute('active-partner', e.currentTarget.getAttribute('telco-partner'));
         [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
           partner.removeAttribute('active');
         });
         e.currentTarget.setAttribute('active', '');
         
-        let numShow = 0;
         const curProviders = datacenterDetails[selectStart.value]['telco-partners'][e.currentTarget.getAttribute('telco-partner')];
-        [...providersBlock.querySelectorAll('[cloud-provider]')].forEach(provider => {
-          if (curProviders.includes(provider.getAttribute('cloud-provider'))) {
-            provider.setAttribute('show', '');
-            numShow++;
-          } else {
-            provider.removeAttribute('show');
-          }
-        });
-        if (!numShow) providerCloudContent.style.display = 'none';
-        else providerCloudContent.style.display = '';
-
-        providersBlock.setAttribute('active', '');
-        separatorBlock.setAttribute('active', '');
+        adjustCloudProviderDisplay(curProviders);
       });
+    });
+
+    // helper function to adjust the telco partners which are shown
+    var adjustTelcoPartnerDisplay = (showPartners) => {
+      // get current positions of blocks to show 
+      const prvBlockPositions = showPartners.map(partnerName => {
+        const block = telcoBlock.querySelector(`[telco-partner="${partnerName}"]`);
+        let rect; 
+        if (!block) console.error(`Unfound: [telco-partner="${partnerName}"]`);
+        else rect = block.getBoundingClientRect();
+        return {
+          block: block,
+          prvX: rect.x,
+          prvY: rect.y,
+          shouldAnimate: block.hasAttribute('show'),
+        }
+      });
+
+      // turn on/off displays of blocks
+      [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
+        partner.style.transition = '';
+        showPartners.includes(partner.getAttribute('telco-partner')) ? partner.setAttribute('show', '') : partner.removeAttribute('show');
+      });
+
+      // adjust positions of blocks
+      prvBlockPositions.forEach(pos => {
+        const curRect = pos.block.getBoundingClientRect();
+        pos.block.style.left = parseInt(pos.prvX) - parseInt(curRect.x) + 'px';
+        pos.block.style.top = parseInt(pos.prvY) - parseInt(curRect.y) + 'px';
+      });
+
+      // flush styling and set all positions to 0
+      setTimeout(() => {
+        prvBlockPositions.forEach(pos => {
+          if (pos.shouldAnimate) pos.block.style.transition = 'left ease 200ms, top ease 200ms';
+          pos.block.offsetTop;
+          pos.block.style.left = '0px';
+          pos.block.style.top = '0px';
+        });
+      }, 0);
+
+      // adjust collapser
+      if (showPartners.length > 6) {
+        telcoBlock.querySelector('.service-container').setAttribute('collapsed', '');
+        const collapser = telcoBlock.querySelector('.service-container-collapse');
+        const numCollapsing = showPartners.length - 6;
+        collapser.setAttribute('numCollapsing', numCollapsing);
+        collapser.innerHTML = `Show more (${numCollapsing})`;
+      } else {
+        telcoBlock.querySelector('.service-container-collapse').removeAttribute('numCollapsing');
+      }
+    }
+
+    // helper function to adjust the cloud providers which are shown
+    var adjustCloudProviderDisplay = (showProviders) => {
+      if (!showProviders.length) { // we are not showing any providers
+        providersBlock.setAttribute('placeholder', 'on');
+        return;
+      }
+      // get current positions of blocks to show 
+      const prvBlockPositions = showProviders.map(providerName => {
+        const block = providersBlock.querySelector(`[cloud-provider="${providerName}"]`);
+        const rect = block.getBoundingClientRect();
+        return {
+          block: block,
+          prvX: rect.x,
+          prvY: rect.y,
+          shouldAnimate: block.hasAttribute('show'),
+        }
+      });
+      // turn on/off displays of blocks
+      [...providersBlock.querySelectorAll('[cloud-provider]')].forEach(provider => {
+        provider.style.transition = '';
+        showProviders.includes(provider.getAttribute('cloud-provider')) ? provider.setAttribute('show', '') : provider.removeAttribute('show');
+      });
+      // adjust positions of blocks
+      prvBlockPositions.forEach(pos => {
+        const curRect = pos.block.getBoundingClientRect();
+        pos.block.style.left = parseInt(pos.prvX) - parseInt(curRect.x) + 'px';
+        pos.block.style.top = parseInt(pos.prvY) - parseInt(curRect.y) + 'px';
+      });
+      providersBlock.setAttribute('placeholder', 'off');
+
+      // flush styling and set all positions to 0
+      setTimeout(() => {
+        prvBlockPositions.forEach(pos => {
+          if (pos.shouldAnimate) pos.block.style.transition = 'left ease 200ms, top ease 200ms';
+          pos.block.offsetTop;
+          pos.block.style.left = '0px';
+          pos.block.style.top = '0px';
+        });
+      }, 0);
+
+      // adjust collapser
+      if (showProviders.length > 6) {
+        providersBlock.querySelector('.service-container').setAttribute('collapsed', '');
+        const collapser = providersBlock.querySelector('.service-container-collapse');
+        const numCollapsing = showProviders.length - 6;
+        collapser.setAttribute('numCollapsing', numCollapsing);
+        collapser.innerHTML = `Show more (${numCollapsing})`;
+      } else {
+        providersBlock.querySelector('.service-container-collapse').removeAttribute('numCollapsing');
+      }
+    }
+
+    // listen for click events on both of service container collapsers
+    var telcoBlockCollapser = telcoBlock.querySelector('.service-container-collapse');
+    var providersBlockCollapser = providersBlock.querySelector('.service-container-collapse');
+    telcoBlockCollapser.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (telcoBlockCollapser.innerHTML == "Show less") {
+        telcoBlockCollapser.innerHTML = `Show more (${telcoBlockCollapser.getAttribute('numCollapsing')})`;
+        telcoBlock.querySelector('.service-container').setAttribute('collapsed', '');
+      } else {
+        telcoBlockCollapser.innerHTML = 'Show less';
+        telcoBlock.querySelector('.service-container').removeAttribute('collapsed');
+      }
+    });
+    providersBlockCollapser.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (providersBlockCollapser.innerHTML == "Show less") {
+        providersBlockCollapser.innerHTML = `Show more (${providersBlockCollapser.getAttribute('numCollapsing')})`;
+        providersBlock.querySelector('.service-container').setAttribute('collapsed', '');
+      } else {
+        providersBlockCollapser.innerHTML = 'Show less';
+        providersBlock.querySelector('.service-container').removeAttribute('collapsed');
+      }
     });
 
     // listen for pingpanel going off the page
