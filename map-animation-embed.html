@@ -2098,21 +2098,29 @@
     // click on telco block container to remove all choices
     telcoBlock.addEventListener('click', e => {
       if (e.currentTarget === telcoBlock) {
-        // turn off active selection on telco partner button
-        [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
-          partner.removeAttribute('active');
-        });
-        // show all current providers
-        const curProvidersSet = new Set(Object.values(datacenterDetails[selectStart.value]['telco-partners']).reduce((acc, cur) => [...acc, ...cur], [])); // cloud providers of the data center
-        const curProviders = [...curProvidersSet];
-        adjustCloudProviderDisplay(curProviders);
+        turnOffTelcoSelection();
       }
     });
+
+    var turnOffTelcoSelection = () => {
+      // turn off active selection on telco partner button
+      [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
+        partner.removeAttribute('active');
+      });
+      // show all current providers
+      const curProvidersSet = new Set(Object.values(datacenterDetails[selectStart.value]['telco-partners']).reduce((acc, cur) => [...acc, ...cur], [])); // cloud providers of the data center
+      const curProviders = [...curProvidersSet];
+      adjustCloudProviderDisplay(curProviders);
+    }
 
     // add click event listneners for each telco partner block
     [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(block => {
       block.addEventListener('click', (e) => {
         e.stopPropagation();
+        if (e.currentTarget.hasAttribute('active')) {
+          turnOffTelcoSelection();
+          return;
+        }
 
         telcoBlock.setAttribute('active-partner', e.currentTarget.getAttribute('telco-partner'));
         [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
@@ -2166,11 +2174,12 @@
 
       // adjust collapser
       if (showPartners.length > 6) {
-        telcoBlock.querySelector('.service-container').setAttribute('collapsed', '');
         const collapser = telcoBlock.querySelector('.service-container-collapse');
         const numCollapsing = showPartners.length - 6;
         collapser.setAttribute('numCollapsing', numCollapsing);
+        if (collapser.innerHTML == "Show less") return;
         collapser.innerHTML = `Show more (${numCollapsing})`;
+        telcoBlock.querySelector('.service-container').setAttribute('collapsed', '');
       } else {
         telcoBlock.querySelector('.service-container-collapse').removeAttribute('numCollapsing');
       }
@@ -2218,11 +2227,12 @@
 
       // adjust collapser
       if (showProviders.length > 6) {
-        providersBlock.querySelector('.service-container').setAttribute('collapsed', '');
         const collapser = providersBlock.querySelector('.service-container-collapse');
         const numCollapsing = showProviders.length - 6;
         collapser.setAttribute('numCollapsing', numCollapsing);
+        if (collapser.innerHTML == "Show less") return;
         collapser.innerHTML = `Show more (${numCollapsing})`;
+        providersBlock.querySelector('.service-container').setAttribute('collapsed', '');
       } else {
         providersBlock.querySelector('.service-container-collapse').removeAttribute('numCollapsing');
       }
