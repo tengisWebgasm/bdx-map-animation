@@ -45,10 +45,10 @@
           },
         },
         'telco-partners': {
-          'hgc': ['aws', 'azure', 'gcp', 'alicloud'],
-          'ct': ['aws', 'azure', 'alicloud', 'ibm'],
-          'cu': ['alicloud'],
           'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
+          'ct': ['aws', 'azure', 'alicloud', 'ibm'],
+          'cu': ['ct-cloud', 'alicloud'],
+          'hgc': ['aws', 'azure', 'gcp', 'alicloud'],
           'guangzhou-shunhang': [],
           'guangzhou-anju': [],
           'logicom-tech': [],
@@ -151,8 +151,9 @@
           },
         },
         'telco-partners': {
-          'cu': ['alicloud', 'ct-cloud'],
           'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
+          'ct': ['aws', 'azure', 'alicloud', 'ibm'],
+          'cu': ['ct-cloud', 'alicloud'],
           'srt': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
           'nova': ['aws', 'salesforce', 'office-365', 'alicloud', 'tencent', 'azure'],
           'citic': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
@@ -202,7 +203,7 @@
           },
         },
         'telco-partners': {
-          'singtel': ['aws', 'azure', 'gcp', 'alicloud', 'office-365', 'vmware', 'dell-emc', 'hpe', 'nutanix', 'chef'],
+          'singtel': ['aws', 'azure', 'gcp', 'alicloud', 'office-365', 'vmware', 'dell-emc', 'hpe', 'nutanix'],
           'starhub': ['aws', 'azure'],
           'telstra': ['aws', 'azure', 'ibm', 'vmware', 'netapp'],
           'm1': ['aws', 'nutanix'],
@@ -704,7 +705,6 @@
   <div id="map-container">
     <div id="map-side-panel">
       <div id="map-side-panel-a">
-        <h2>Select cities lorem ipsum dolor sit amet</h2>
         <div id="city-selection-container">
           <div id="city-selection-icons">
             <svg style="margin-top: 6px;" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
@@ -796,8 +796,8 @@
         <div id="telco-block">
           <div>Network Partners</div>
           <div class="service-container">
-            <div class="service-item" telco-partner="hgc">
-              <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4755607584a8bd68f70_image4-35.png" loading="lazy" alt="">
+            <div class="service-item" telco-partner="cm">
+              <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf476baeefb00a8aebf8c_image13-47.png" loading="lazy" alt="">
             </div>
             <div class="service-item" telco-partner="ct">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf475187018745522fe36_image12-45.png" loading="lazy" alt="">
@@ -805,38 +805,14 @@
             <div class="service-item" telco-partner="cu">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf475ef191b7faead2422_image11-44.png" loading="lazy" alt="">
             </div>
-            <div class="service-item" telco-partner="cm">
-              <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf476baeefb00a8aebf8c_image13-47.png" loading="lazy" alt="">
-            </div>
-            <div class="service-item" telco-partner="guangzhou-shunhang">
-              Shunhang Coms.
-            </div>
-            <div class="service-item" telco-partner="guangzhou-anju">
-              Anju Coms.
-            </div>
-            <div class="service-item" telco-partner="logicom-tech">
-              Logicom Tech
-            </div>
-            <div class="service-item" telco-partner="guangzhou-yingtong">
-              YingTong Coms.
-            </div>
-            <div class="service-item" telco-partner="guangzhou-yunju">
-              YunJu Coms.
+            <div class="service-item" telco-partner="hgc">
+              <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4755607584a8bd68f70_image4-35.png" loading="lazy" alt="">
             </div>
             <div class="service-item" telco-partner="nova">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4769329d90332c90e87_image14-49.png" loading="lazy" alt="">
             </div>
             <div class="service-item" telco-partner="pccw">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf476a1155a9120769798_image16-52.png" loading="lazy" alt="">
-            </div>
-            <div class="service-item" telco-partner="hkbn">
-              HKBN
-            </div>
-            <div class="service-item" telco-partner="hk-telecom">
-              HK Telecom
-            </div>
-            <div class="service-item" telco-partner="srt">
-              SRIT
             </div>
             <div class="service-item" telco-partner="citic">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf47646fc80772e8912b2_image15-51.png" loading="lazy" alt="">
@@ -862,14 +838,38 @@
             <div class="service-item" telco-partner="superloop">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4752a3de511f0e15642_image9-40.png" loading="lazy" alt="">
             </div>
-            <div class="service-item" telco-partner="cogent">
-              Cogent
-            </div>
             <div class="service-item" telco-partner="netlink-trust">
               <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf47548bbf7575c6b70cc_image8-39.jpeg" loading="lazy" alt="">
             </div>
             <div class="service-item" telco-partner="viewquest">
               <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf4750182f83e63182ab2_image10-42.jpeg" loading="lazy" alt="">
+            </div>
+            <div class="service-item" telco-partner="guangzhou-shunhang">
+              Shunhang Coms.
+            </div>
+            <div class="service-item" telco-partner="guangzhou-anju">
+              Anju Coms.
+            </div>
+            <div class="service-item" telco-partner="logicom-tech">
+              Logicom Tech
+            </div>
+            <div class="service-item" telco-partner="guangzhou-yingtong">
+              YingTong Coms.
+            </div>
+            <div class="service-item" telco-partner="guangzhou-yunju">
+              YunJu Coms.
+            </div>
+            <div class="service-item" telco-partner="hkbn">
+              HKBN
+            </div>
+            <div class="service-item" telco-partner="hk-telecom">
+              HK Telecom
+            </div>
+            <div class="service-item" telco-partner="srt">
+              SRIT
+            </div>
+            <div class="service-item" telco-partner="cogent">
+              Cogent
             </div>
           </div>
           <div class="service-container-collapse">
@@ -894,6 +894,9 @@
               <div class="service-item" cloud-provider="gcp">
                 <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c187018046922ffa4_image4-35.png" loading="lazy" sizes="(max-width: 1502px) 100vw, 1502px" srcset="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c187018046922ffa4_image4-35-p-500.png 500w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c187018046922ffa4_image4-35-p-800.png 800w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c187018046922ffa4_image4-35-p-1080.png 1080w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c187018046922ffa4_image4-35.png 1502w" alt="">
               </div>
+              <div class="service-item" cloud-provider="ct-cloud">
+                <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d436a0e49d3cb53a4_image10-46.png" loading="lazy" alt="">
+              </div>
               <div class="service-item" cloud-provider="alicloud">
                 <img style="object-fit: cover;" src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44.png" loading="lazy" sizes="(max-width: 2668px) 100vw, 2668px" srcset="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44-p-500.png 500w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44-p-800.png 800w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44-p-1080.png 1080w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44-p-1600.png 1600w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44-p-2000.png 2000w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44-p-2600.png 2600w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d9f1ddae9156c7f08_image9-44.png 2668w" alt="">
               </div>
@@ -914,9 +917,6 @@
               </div>
               <div class="service-item" cloud-provider="tencent">
                 <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c49304b694de65a80_image7-40.png" loading="lazy" sizes="(max-width: 560px) 100vw, 560px" srcset="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c49304b694de65a80_image7-40-p-500.png 500w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51c49304b694de65a80_image7-40.png 560w" alt="">
-              </div>
-              <div class="service-item" cloud-provider="ct-cloud">
-                <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d436a0e49d3cb53a4_image10-46.png" loading="lazy" alt="">
               </div>
               <div class="service-item" cloud-provider="u-cloud">
                 <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d49304b9427e65a81_image13-50.png" loading="lazy" sizes="(max-width: 764px) 100vw, 764px" srcset="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d49304b9427e65a81_image13-50-p-500.png 500w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51d49304b9427e65a81_image13-50.png 764w" alt="">
@@ -1628,7 +1628,6 @@
             <ellipse cx="911.88" cy="369.605" rx="5.67675" ry="5.67674" fill="white"/>
             <ellipse cx="911.88" cy="369.605" rx="4.25756" ry="4.25755" identifier/>
             <text x="921" y="374" class="city-name">SIN1 | Singapore</text>
-            <image x="1020" y="355" href="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60f551a9aeb557814ba591b6_Group.svg" />
           </g>
           <g id="nanjing" class="city-group" dc onclick="handleCityClick(event)">
             <rect x="926" y="195" height="16" width="68" fill="transparent"/>
@@ -1639,7 +1638,6 @@
             <ellipse cx="934.181" cy="202.344" rx="5.67675" ry="5.67674" fill="white"/>
             <ellipse cx="934.181" cy="202.344" rx="4.25756" ry="4.25755" identifier/>
             <text x="947" y="207" class="city-name">NKG1 | Nanjing</text>
-            <image x="922" y="185" href="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60f551a9aeb557814ba591b6_Group.svg" />
           </g>
           <g id="kwai-chung" class="city-group" dc onclick="handleCityClick(event)">
             <rect x="938" y="232" height="16" width="93" fill="transparent"/>
@@ -2109,6 +2107,8 @@
       [...telcoBlock.querySelectorAll('[telco-partner]')].forEach(partner => {
         partner.removeAttribute('active');
       });
+      // remove the active attribute
+      telcoBlock.removeAttribute('active-partner');
       // show all current providers
       const curProvidersSet = new Set(Object.values(datacenterDetails[selectStart.value]['telco-partners']).reduce((acc, cur) => [...acc, ...cur], [])); // cloud providers of the data center
       const curProviders = [...curProvidersSet];
