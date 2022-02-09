@@ -48,13 +48,15 @@
           'cm': ['aws', 'azure', 'gcp', 'alicloud', 'ibm', 'huawei'],
           'ct': ['aws', 'azure', 'alicloud', 'ibm'],
           'cu': ['ct-cloud', 'alicloud'],
-          'hgc': ['aws', 'azure', 'gcp', 'alicloud'],
+          'hgc': ['aws', 'azure', 'gcp', 'alicloud','cypresstel'],
           'guangzhou-shunhang': [],
           'guangzhou-anju': [],
           'logicom-tech': [],
           'guangzhou-yingtong': [],
           'guangzhou-yunju': [],
           'nova': ['aws', 'salesforce', 'office-365', 'alicloud', 'tencent', 'azure'],
+        },
+        'network-fabric': {
         },
       },
       'kwai-chung': {
@@ -101,10 +103,13 @@
           },
         },
         'telco-partners': {
-          'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365'],
+          'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365','cypresstel'],
           'pccw': ['aws', 'azure', 'gcp', 'oracle', 'alicloud', 'ibm', 'tencent'],
           'hkbn': [],
           'hk-telecom': [],
+          'network-fabric': {
+            'console-connect': ['console-connectx'],
+          },
         },
       },
       'nanjing': {
@@ -157,6 +162,9 @@
           'srt': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
           'nova': ['aws', 'salesforce', 'office-365', 'alicloud', 'tencent', 'azure'],
           'citic': ['aws', 'alicloud', 'tencent', 'azure', 'huawei', 'u-cloud', 'baidu'],
+          'telstra-pbs': [],
+        },
+        'network-fabric': {
         },
       },
       'paya-lebar': {
@@ -216,6 +224,8 @@
           'netlink-trust': [],
           'viewquest': [],
         },
+        'network-fabric': {
+        },
       },
       'wong-chuk-hang': {
         // HKG1
@@ -264,6 +274,9 @@
           'hgc': ['aws', 'azure', 'gcp', 'alicloud', 'salesforce', 'office-365'],
           'pccw': ['aws', 'azure', 'gcp', 'oracle', 'alicloud', 'ibm', 'tencent'],
           'hk-telecom': [],
+        },
+        'network-fabric': {
+          'console-connect': ['console-connectx'],
         },
       },
     };
@@ -609,33 +622,38 @@
       padding-top: 20px;
     }
 
-    #telco-separator {
+    #telco-separator, #telco-separator2 {
       position: relative;
       background-color: white;
       width: 100%;
       z-index: 2;
     }
     
-    #providers-block {
+    #providers-block, #net-fabric-block {
       position: relative;
       background-color: white;
       z-index: 1;
-      min-height: 200px;
+      /* min-height: 200px; */
+      min-height: 150px;
       padding-bottom: 8px;
     }
     #providers-block[placeholder="on"] #providers-block-content {
       opacity: 0;
     }
+    #net-fabric-block[placeholder="on"] #net-fabric-block-content {
+      opacity: 0;
+    }
 
-    #providers-block-content {
+    #providers-block-content, #net-fabric-block-content {
       background-color: white;
       position: relative;
       z-index: 2;
-      min-height: 200px;
+      /* min-height: 200px; */
+      min-height: 150px;
       transition: opacity ease 200ms;
     }
 
-    #providers-block-placeholder {
+    #providers-block-placeholder, #net-fabric-block-placeholder {
       position: absolute;
       text-align: center;
       top: 20px;
@@ -901,6 +919,9 @@
             <div class="service-item" telco-partner="cogent">
               Cogent
             </div>
+            <div class="service-item" telco-partner="telstra-pbs">
+              Telstra PBS
+            </div>
           </div>
           <div class="service-container-collapse">
             Show more (0)
@@ -972,12 +993,33 @@
               <div class="service-item" cloud-provider="netapp">
                 <img src="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52.png" loading="lazy" sizes="(max-width: 1200px) 100vw, 1200px" srcset="https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52-p-500.png 500w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52-p-800.png 800w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52-p-1080.png 1080w, https://assets-global.website-files.com/5f22d8281aaa21375aee7b55/60cbf51dcfa515eef5267e14_image14-52.png 1200w" alt="">
               </div>
+              <div class="service-item" cloud-provider="cypresstel">
+                <img src="https://app.managed360view.com/test_scripts/bma/assets/Cypresstel.png" loading="lazy" sizes="(max-width: 1200px) 100vw, 1200px" srcset="https://app.managed360view.com/test_scripts/bma/assets/Cypresstel.png 500w, https://app.managed360view.com/test_scripts/bma/assets/Cypresstel.png 800w, https://app.managed360view.com/test_scripts/bma/assets/Cypresstel.png 1080w, https://app.managed360view.com/test_scripts/bma/assets/Cypresstel.png 1200w" alt="">
+              </div>
             </div>
             <div class="service-container-collapse">
               Show more (0)
             </div>
           </div>
           <div id="providers-block-placeholder">Network Provider</div>
+        </div>
+        <div id="telco-separator2">
+          <svg style="width: 100%;" xmlns="http://www.w3.org/2000/svg" width="312" height="15" viewBox="0 0 312 15" fill="none">
+            <path d="M0 1H142L155.5 14L169 1H312" stroke="#E7E7E9"/>
+          </svg>
+        </div>
+        <div id="net-fabric-block">
+          <div id="net-fabric-block-content">
+            <div>Network Fabric</div>
+            <div class="service-container">
+              <div class="service-item" net-fabric-provider="console-connect">
+                <img src="https://app.managed360view.com/test_scripts/bma/assets/Console_Connect2.jpg" loading="lazy" sizes="(max-width: 1200px) 100vw, 1200px" srcset="https://app.managed360view.com/test_scripts/bma/assets/Console_Connect2.jpg 500w, https://app.managed360view.com/test_scripts/bma/assets/Console_Connect2.jpg 800w, https://app.managed360view.com/test_scripts/bma/assets/Console_Connect2.jpg 1080w, https://app.managed360view.com/test_scripts/bma/assets/Console_Connect2.jpg 1200w" alt="">
+              </div>
+            </div>
+            <div class="service-container-collapse">
+              Show more (0)
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1976,6 +2018,8 @@
     var separatorBlock = document.querySelector('#telco-separator')
     var providersBlock = document.querySelector('#providers-block');
     var providerCloudContent = document.querySelector('#providers-block-content');
+    
+    var netFabricBlock = document.querySelector('#net-fabric-block');
     var pingPanelContent = pingPanel.querySelector('#map-ping-content');
     var pingPanelButton = pingPanel.querySelector('#map-ping-button');
 
@@ -1991,6 +2035,8 @@
       const datacentres = Object.keys(datacenterDetails); // all datacentres
       const curPartners = Object.keys(datacenterDetails[cityName]['telco-partners']); // telco partners of the data center
       const curProvidersSet = new Set(Object.values(datacenterDetails[cityName]['telco-partners']).reduce((acc, cur) => [...acc, ...cur], [])); // cloud providers of the data center
+      const curFabrics = Object.keys(datacenterDetails[cityName]['network-fabric']); // fabric partners of the data center
+      const curFabricsSet = new Set(Object.values(datacenterDetails[cityName]['network-fabric']).reduce((acc, cur) => [...acc, ...cur], [])); // fabric providers of the data center
       const curProviders = [...curProvidersSet];
 
       // display the lines and city
@@ -2044,6 +2090,9 @@
         // show the data center's relevant cloud provideers
         adjustCloudProviderDisplay(curProviders);
       }
+      
+      // show the data center fabric partners
+      adjustFabricPartnerDisplay(curFabrics);
 
       // display the panel
       telcoContainer.setAttribute('on', '');
@@ -2267,6 +2316,58 @@
         providersBlock.querySelector('.service-container').setAttribute('collapsed', '');
       } else {
         providersBlock.querySelector('.service-container-collapse').removeAttribute('numCollapsing');
+      }
+    }
+    
+    // helper function to adjust the fabric partners which are shown
+    var adjustFabricPartnerDisplay = (showPartners) => {
+      // get current positions of blocks to show 
+      const prvBlockPositions = showPartners.map(partnerName => {
+        const block = netFabricBlock.querySelector(`[net-fabric-provider="${partnerName}"]`);
+        let rect; 
+        if (!block) console.error(`Unfound: [net-fabric-provider="${partnerName}"]`);
+        else rect = block.getBoundingClientRect();
+        return {
+          block: block,
+          prvX: rect.x,
+          prvY: rect.y,
+          shouldAnimate: block.hasAttribute('show'),
+        }
+      });
+
+      // turn on/off displays of blocks
+      [...netFabricBlock.querySelectorAll('[net-fabric-provider]')].forEach(partner => {
+        partner.style.transition = '';
+        showPartners.includes(partner.getAttribute('net-fabric-provider')) ? partner.setAttribute('show', '') : partner.removeAttribute('show');
+      });
+
+      // adjust positions of blocks
+      prvBlockPositions.forEach(pos => {
+        const curRect = pos.block.getBoundingClientRect();
+        pos.block.style.left = parseInt(pos.prvX) - parseInt(curRect.x) + 'px';
+        pos.block.style.top = parseInt(pos.prvY) - parseInt(curRect.y) + 'px';
+      });
+
+      // flush styling and set all positions to 0
+      setTimeout(() => {
+        prvBlockPositions.forEach(pos => {
+          if (pos.shouldAnimate) pos.block.style.transition = 'left ease 200ms, top ease 200ms';
+          pos.block.offsetTop;
+          pos.block.style.left = '0px';
+          pos.block.style.top = '0px';
+        });
+      }, 0);
+
+      // adjust collapser
+      if (showPartners.length > 6) {
+        const collapser = netFabricBlock.querySelector('.service-container-collapse');
+        const numCollapsing = showPartners.length - 6;
+        collapser.setAttribute('numCollapsing', numCollapsing);
+        if (collapser.innerHTML == "Show less") return;
+        collapser.innerHTML = `Show more (${numCollapsing})`;
+        netFabricBlock.querySelector('.service-container').setAttribute('collapsed', '');
+      } else {
+        netFabricBlock.querySelector('.service-container-collapse').removeAttribute('numCollapsing');
       }
     }
 
