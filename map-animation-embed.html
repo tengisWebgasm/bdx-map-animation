@@ -2426,6 +2426,21 @@
     }, 20);
 
   </script>
+  
+  <script>
+    $(function() {
+      $('#city-select-start select').on('change', function() {
+        let css = $(this).val()
+        if(css == 'wong-chuk-hang' || css == 'kwai-chung') {
+          $('#telco-separator2').show()
+          $('#net-fabric-block').show()
+        } else {
+          $('#telco-separator2').hide()
+          $('#net-fabric-block').hide()
+        }
+      })
+    })
+  </script>
   <!-- NEW LINE HELPER -->
   <!-- <div style="
     display: flex;
